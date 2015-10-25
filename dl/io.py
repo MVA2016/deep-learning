@@ -7,17 +7,20 @@ def load_digits(filename):
     Load digits for assignment 1
 
     Parameters
-        filename -- path to .mat file
+    ----------
+    filename: str
+        path to .mat file
 
-    Return
-        train -- training set (numpy array)
-        test -- test set
+    Returns
+    -------
+    tuple(ndarray,ndarray)
+        Returns a tuple with train set and test set
     '''
     digit7 = loadmat(filename)['D'].astype(float)/255.
     train = digit7[::2]
     test = digit7[1::2]
-    print 'Train set {}'.format(train.shape)
-    print 'Test set {}'.format(test.shape)
+    print('Train set {}'.format(train.shape))
+    print('Test set {}'.format(test.shape))
     return train, test
 
 
